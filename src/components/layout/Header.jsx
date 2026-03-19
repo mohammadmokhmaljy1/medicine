@@ -1,6 +1,5 @@
 import React from 'react';
 import { NAV_HEIGHT } from '../../config/siteContent';
-import logo from '../../assets/logo.png';
 import { FaPhone, FaMapMarkerAlt, FaWhatsapp, FaEnvelope, FaInstagram, FaTwitter, FaTiktok, FaSnapchat } from 'react-icons/fa';
 
 const Header = ({ lang, t, onToggleLanguage }) => {
@@ -34,7 +33,7 @@ const Header = ({ lang, t, onToggleLanguage }) => {
           
           {/* Social + language (top) */}
           <div className="flex items-center gap-3">
-            <img src={logo} alt="logo" className="h-25" />
+            <img src="https://res.cloudinary.com/dblwpkohn/image/upload/v1773956032/logo_ruikl6.png" alt="logo" className="h-25" />
           </div>
 
           {/* Phone / location / book button */}

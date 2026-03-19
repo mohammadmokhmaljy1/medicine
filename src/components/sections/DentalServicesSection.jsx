@@ -1,5 +1,4 @@
-import React from 'react'
-import mainImg from '../../assets/grid.jpg'
+import React from 'react';
 
 const DentalServicesSection = ({ t, lang }) => {
   return (
@@ -33,7 +32,7 @@ const DentalServicesSection = ({ t, lang }) => {
         {/* Left image collage */}
         <div className="w-full max-w-xl lg:w-1/2">
           <div className="">
-              <img src={mainImg} alt="" className='max-w-[440px]' />
+              <img src="https://res.cloudinary.com/dblwpkohn/image/upload/v1773956038/grid_h1n99e.jpg" alt="" className='max-w-[440px]' />
           </div>
         </div>
       </div>

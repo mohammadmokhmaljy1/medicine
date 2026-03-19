@@ -1,19 +1,13 @@
-import React from 'react'
-import dermatologyImg from '../../assets/dermatology_service.jpg'
-import dentistryImg from '../../assets/dentistry_service.jpg'
-import internalMedicineImg from '../../assets/Internal_medicine_service.jpg'
-import pediatricsImg from '../../assets/babies_service.jpg'
-import generalMedicineImg from '../../assets/general_service.jpg'
-import gynecologyImg from '../../assets/pregnant_service.jpg'
+import React from 'react';
 
 // Order matches the services array order: dermatology, dentistry, internal medicine, pediatrics, general medicine, gynecology
 const images = [
-  dermatologyImg,
-  dentistryImg,
-  internalMedicineImg,
-  pediatricsImg,
-  generalMedicineImg,
-  gynecologyImg,
+  "https://res.cloudinary.com/dblwpkohn/image/upload/v1773956021/dermatology_service_eqq9fe.jpg",
+  "https://res.cloudinary.com/dblwpkohn/image/upload/v1773956030/dentistry_service_umgjbw.jpg",
+  "https://res.cloudinary.com/dblwpkohn/image/upload/v1773956031/Internal_medicine_service_r1glli.jpg",
+  "https://res.cloudinary.com/dblwpkohn/image/upload/v1773956040/babies_service_exnm5v.jpg",
+  "https://res.cloudinary.com/dblwpkohn/image/upload/v1773956038/general_service_zazsmr.jpg",
+  "https://res.cloudinary.com/dblwpkohn/image/upload/v1773956046/pregnant_service_j2ggux.jpg",
 ]
 
 const GeneralServicesSection = ({ t, lang }) => {

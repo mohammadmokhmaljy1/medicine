@@ -1,7 +1,6 @@
-import React, { useRef } from 'react'
-import heroImage from '../../assets/hero-bg.png'
-import { NAV_HEIGHT } from '../../config/siteContent'
-import { FaClock, FaRegCalendarAlt, FaPhone, FaWhatsapp } from 'react-icons/fa'
+import React, { useRef } from 'react';
+import { NAV_HEIGHT } from '../../config/siteContent';
+import { FaClock, FaPhone, FaWhatsapp } from 'react-icons/fa';
 
 const EMAIL_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID'
 const EMAIL_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID'
@@ -12,7 +11,7 @@ const HeroSection = ({ t, lang }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const { default: emailjs } = await import('@emailjs/browser')
+    const { default: emailjs } = await import('@emailjs/browser');
 
     try {
       await emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, formRef.current, {
@@ -35,7 +34,7 @@ const HeroSection = ({ t, lang }) => {
       <div
         className="relative px-4 pt-10 pb-24 sm:px-6 lg:px-8"
         style={{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: `url("https://res.cloudinary.com/dblwpkohn/image/upload/v1773956029/hero-bg_urpzxo.png")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -135,7 +134,7 @@ const HeroSection = ({ t, lang }) => {
                     name="department"
                     className="w-full appearance-none rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-[11px] text-slate-500 outline-none transition focus:border-teal-400 focus:bg-white focus:text-slate-700 focus:ring-2 focus:ring-teal-100"
                   >
-                    <option value="" hidden selected>
+                    <option hidden selected>
                       {lang === 'ar' ? 'اختر القسم' : 'Select department'}
                     </option>
                     <option value={lang === 'ar' ? 'جلدية' : 'Dermatology'}>

@@ -1,6 +1,5 @@
-import React from 'react'
-import logo from '../../assets/logo_transparent.png'
-import { FaPhone, FaMapMarkerAlt, FaClock, FaEnvelope } from 'react-icons/fa'
+import React from 'react';
+import { FaPhone, FaMapMarkerAlt, FaClock, FaEnvelope } from 'react-icons/fa';
 
 const Footer = ({ t, lang }) => {
   const isAr = lang === 'ar'
@@ -93,7 +92,7 @@ const Footer = ({ t, lang }) => {
         {/* Right: logo and name */}
         <div className="w-full text-center lg:w-1/3 lg:text-center">
           <div className="inline-flex flex-col items-center gap-2 lg:items-center">
-            <img src={logo} alt="Affa Medical logo" className="max-w-[300px] object-cover aspect-video" />
+            <img src="https://res.cloudinary.com/dblwpkohn/image/upload/v1773956020/logo_transparent_fkb40y.png" alt="Affa Medical logo" className="max-w-[300px] object-cover aspect-video" />
             <div className="text-sm font-semibold text-center">
               {isAr ? 'مجمع إفاء الطبي' : 'Affa Medical Complex'}
             </div>
