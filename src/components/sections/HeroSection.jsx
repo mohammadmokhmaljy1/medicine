@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import heroImage from '../../assets/hero-bg.png'
 import { NAV_HEIGHT } from '../../config/siteContent'
-import { FaClock, FaRegCalendarAlt } from 'react-icons/fa'
+import { FaClock, FaRegCalendarAlt, FaPhone, FaWhatsapp } from 'react-icons/fa'
 
 const EMAIL_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID'
 const EMAIL_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID'
@@ -43,18 +43,6 @@ const HeroSection = ({ t, lang }) => {
         {/* overlay to soften image on the right */}
         <div className="absolute inset-0 rounded-3xl bg-gradient-to-l from-white/85 via-white/40 to-sky-200/20" />
 
-        {/* Live Chat badge on left */}
-        <div className="absolute bottom-28 end-6">
-          <div className="rounded-2xl bg-white px-3 py-2 shadow-xl shadow-sky-200/80 ring-1 ring-sky-100">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-teal-500" />
-              <span className="text-[11px] font-semibold text-fuchsia-600">
-                {lang === 'ar' ? 'Live Chat' : 'Live Chat'}
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* Right side text content */}
         <div className="relative flex h-[360px] items-center justify-start sm:h-[420px] lg:h-[460px]">
           <div className="max-w-[500px] pe-6 ps-6 text-start sm:ps-16 lg:ps-24">
@@ -68,22 +56,33 @@ const HeroSection = ({ t, lang }) => {
               {t.hero.subtitle}
             </p>
             <div className="mt-5 flex justify-start">
-              <a href={`tel:${t.nav.phone}`} className='w-full'>
+              <a href={`tel:${t.nav.phone}`} className='w-40'>
                 <button
                   type="button"
-                  className="inline-flex items-center justify-center rounded-md border border-teal-500 bg-white px-10 cursor-pointer py-2.5 text-sm font-semibold text-teal-600 transition hover:bg-teal-50"
+                  className="inline-flex items-center justify-center rounded-md border border-teal-500 bg-white px-3 cursor-pointer py-2.5 text-sm font-semibold text-teal-600 transition hover:bg-teal-50 mb-4"
+                >
+                  {lang === 'ar' ? 'اتصل بنا' : 'Call us'}
+                  <FaPhone className="w-4 h-4 text-teal-600 mx-2" />
+                </button>
+              </a>
+              <a href={`https://wa.me/966920017765?text=السلام عليكم ورحمة الله وبركاته، أنا أريد حجز موعد لخدمة طبية`} className='w-full'>
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center rounded-md border border-teal-500 bg-white px-5 cursor-pointer py-2.5 text-sm font-semibold text-teal-600 transition hover:bg-teal-50 mb-4"
                 >
                   {t.hero.primaryCta}
+                  <FaWhatsapp className="w-4 h-4 text-teal-600 mx-2" />
                 </button>
               </a>
             </div>
+
           </div>
         </div>
-      </div>
+      </div >
 
       {/* Booking card under hero */}
 
-      <div className="relative -mt-10">
+      < div className="relative -mt-10" >
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -136,8 +135,28 @@ const HeroSection = ({ t, lang }) => {
                     name="department"
                     className="w-full appearance-none rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-[11px] text-slate-500 outline-none transition focus:border-teal-400 focus:bg-white focus:text-slate-700 focus:ring-2 focus:ring-teal-100"
                   >
-                    <option>
-                      {lang === 'ar' ? 'قسم الحجز' : 'Department'}
+                    <option value="" hidden selected>
+                      {lang === 'ar' ? 'اختر القسم' : 'Select department'}
+                    </option>
+                    <option value={lang === 'ar' ? 'جلدية' : 'Dermatology'}>
+                      {lang === 'ar' ? 'جلدية' : 'Dermatology'}
+                    </option>
+                    <option value={lang === 'ar' ? 'الأسنان' : 'Dentistry'}>
+                      {lang === 'ar' ? 'الأسنان' : 'Dentistry'}
+                    </option>
+                    <option value={lang === 'ar' ? 'طب البطانة' : 'Internal medicine'}>
+                      {lang === 'ar' ? 'طب البطانة' : 'Internal medicine'}
+                    </option>
+                    <option value={lang === 'ar' ? 'طب الأطفال' : 'Pediatrics'}>
+                      {lang === 'ar' ? 'طب الأطفال' : 'Pediatrics'}
+                    </option>
+                    <option value={lang === 'ar' ? 'طب عام' : 'General medicine'}>
+                      {lang === 'ar' ? 'طب عام' : 'General medicine'}
+                    </option>
+                    <option value={lang === 'ar' ? 'طب النساء والولادة' : 'Gynecology & Obstetrics'}>
+                      {lang === 'ar'
+                        ? 'طب النساء والولادة'
+                        : 'Gynecology & Obstetrics'}
                     </option>
                   </select>
                   <span className="pointer-events-none absolute inset-y-0 start-2 flex items-center text-slate-300">
@@ -147,7 +166,7 @@ const HeroSection = ({ t, lang }) => {
                 <div className="relative">
                   <input
                     type="time"
-                    name="booking_time"
+                    name="appointment_time"
                     className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-[11px] text-slate-500 outline-none transition focus:border-teal-400 focus:bg-white focus:text-slate-700 focus:ring-2 focus:ring-teal-100"
                   />
                   {/* <FaClock className="pointer-events-none absolute inset-y-0 end-2 my-auto h-4 w-4 text-slate-300" /> */}
@@ -156,7 +175,7 @@ const HeroSection = ({ t, lang }) => {
                   <input
                     type="date"
                     placeholder=""
-                    name="booking_date"
+                    name="appointment_date"
                     className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-[11px] text-slate-500 outline-none transition focus:border-teal-400 focus:bg-white focus:text-slate-700 focus:ring-2 focus:ring-teal-100"
                   />
                   {/* <FaRegCalendarAlt className="pointer-events-none absolute inset-y-0 end-2 my-auto h-4 w-4 text-slate-300" /> */}
@@ -165,7 +184,7 @@ const HeroSection = ({ t, lang }) => {
             </div>
           </div>
         </form>
-      </div>
+      </div >
       {/* // </section> */}
     </>
   )

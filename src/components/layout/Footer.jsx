@@ -1,12 +1,12 @@
 import React from 'react'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo_transparent.png'
 import { FaPhone, FaMapMarkerAlt, FaClock, FaEnvelope } from 'react-icons/fa'
 
 const Footer = ({ t, lang }) => {
   const isAr = lang === 'ar'
 
   return (
-    <footer className="bg-gradient-to-r from-sky-800 via-indigo-900 to-fuchsia-900 py-10 text-white">
+    <footer className="bg-slate-900 py-10 text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-start lg:justify-between lg:px-8">
         {/* Left: contact details */}
         <div className="w-full text-start lg:w-1/3">

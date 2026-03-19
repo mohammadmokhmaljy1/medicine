@@ -1,5 +1,5 @@
 import React from 'react'
-import mainImg from '../../assets/sec-2.jpg'
+import mainImg from '../../assets/grid.jpg'
 
 const DentalServicesSection = ({ t, lang }) => {
   return (

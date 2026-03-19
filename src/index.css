@@ -22,3 +22,31 @@ select {
 input, select, textarea {
   font-size: 14px;
 }
+
+/* Responsiveness helpers (no layout refactoring) */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+}
+
+iframe {
+  width: 100%;
+  display: block;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}

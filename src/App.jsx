@@ -4,9 +4,9 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import HeroSection from './components/sections/HeroSection'
 import DentalServicesSection from './components/sections/DentalServicesSection'
-import MedicalServicesSection from './components/sections/MedicalServicesSection'
-import GeneralServicesSection from './components/sections/GeneralServicesSection'
-import OffersBanner from './components/sections/OffersBanner'
+// import MedicalServicesSection from './components/sections/MedicalServicesSection'
+import GeneralServicesSection from './components/sections/ServicesSection'
+import MapSection from './components/sections/MapSection'
 import ContactSection from './components/sections/ContactSection'
 
 const App = () => {
@@ -27,12 +27,12 @@ const App = () => {
       >
         <Header lang={lang} t={t} onToggleLanguage={handleToggleLanguage} />
 
-        <main className="pt-[132px]">
+        <main>
           <HeroSection t={t} lang={lang} />
           <DentalServicesSection t={t} lang={lang} />
-          <MedicalServicesSection t={t} lang={lang} />
+          {/* <MedicalServicesSection t={t} lang={lang} /> */}
           <GeneralServicesSection t={t} lang={lang} />
-          <OffersBanner t={t} lang={lang} />
+          <MapSection t={t} lang={lang} />
           <ContactSection t={t} lang={lang} />
         </main>
 
