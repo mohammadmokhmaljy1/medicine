@@ -55,23 +55,13 @@ const HeroSection = ({ t, lang }) => {
               {t.hero.subtitle}
             </p>
             <div className="mt-5 flex justify-start">
-              <a href={`tel:${t.nav.phone}`} className='w-40'>
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center rounded-md border border-teal-500 bg-white px-3 cursor-pointer py-2.5 text-sm font-semibold text-teal-600 transition hover:bg-teal-50 mb-4"
-                >
+              <a href={`tel:${t.nav.phone}`} className='inline-flex items-center justify-center rounded-md border border-teal-500 bg-white px-3 cursor-pointer py-2.5 text-sm font-semibold text-teal-600 transition hover:bg-teal-50 m-1'>
                   {lang === 'ar' ? 'اتصل بنا' : 'Call us'}
                   <FaPhone className="w-4 h-4 text-teal-600 mx-2" />
-                </button>
               </a>
-              <a href={`https://wa.me/966920017765?text=السلام عليكم ورحمة الله وبركاته، أنا أريد حجز موعد لخدمة طبية`} className='w-full'>
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center rounded-md border border-teal-500 bg-white px-5 cursor-pointer py-2.5 text-sm font-semibold text-teal-600 transition hover:bg-teal-50 mb-4"
-                >
-                  {t.hero.primaryCta}
-                  <FaWhatsapp className="w-4 h-4 text-teal-600 mx-2" />
-                </button>
+              <a href={`https://wa.me/920017765?text=السلام عليكم ورحمة الله وبركاته، أنا أريد حجز موعد لخدمة طبية`} className='inline-flex items-center justify-center rounded-md border border-teal-500 bg-white px-3 cursor-pointer py-2.5 text-sm font-semibold text-teal-600 transition hover:bg-teal-50 m-1'>
+                {t.hero.primaryCta}
+                <FaWhatsapp className="w-4 h-4 text-teal-600 mx-2" />
               </a>
             </div>
 
@@ -81,15 +71,15 @@ const HeroSection = ({ t, lang }) => {
 
       {/* Booking card under hero */}
 
-      < div className="relative -mt-10" >
+      <div className="relative -mt-10 p-4">
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mx-auto flex max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl shadow-sky-200/80 ring-1 ring-slate-100"
+          className="mx-auto flex max-w-5xl flex-col overflow-hidden rounded-3xl bg-white shadow-2xl shadow-sky-200/80 ring-1 ring-slate-100 sm:flex-row"
         >
           {/* Left teal column */}
-          <button type="submit" className="text-xs font-semibold cursor-pointer">
-            <div className="flex w-40 flex-col items-center justify-center gap-3 bg-teal-600 px-4 py-6 text-center text-white sm:w-48 rounded-2xl mx-4">
+          <button type="submit" className="order-2 px-4 pb-4 text-xs font-semibold cursor-pointer sm:order-1 sm:px-0 sm:pb-0">
+            <div className="flex w-full flex-row items-center justify-center gap-3 rounded-2xl bg-teal-600 px-4 py-4 text-center text-white sm:mx-4 sm:w-48 sm:flex-col sm:py-6">
               <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40">
                 <FaClock className='w-4 h-4 text-white' />
               </div>
@@ -98,7 +88,7 @@ const HeroSection = ({ t, lang }) => {
           </button>
 
           {/* Right booking form */}
-          <div className="flex-1 px-4 py-4 sm:px-6 sm:py-5">
+          <div className="order-1 flex-1 px-4 pt-4 pb-3 sm:order-2 sm:px-6 sm:py-5">
             <div className="mb-3 flex justify-between text-[11px] font-semibold text-fuchsia-600">
               <span>
                 {lang === 'ar' ? 'تفضل بحجز موعدك الآن' : 'Book your appointment now'}

@@ -96,9 +96,6 @@ const Footer = ({ t, lang }) => {
             <div className="text-sm font-semibold text-center">
               {isAr ? 'مجمع إفاء الطبي' : 'Affa Medical Complex'}
             </div>
-            <div className="text-[11px] tracking-wide text-sky-100 text-center">
-              {isAr ? 'أسنان · داخلية · أطفال' : 'Dental · Internal Medicine · Pediatrics'}
-            </div>
           </div>
         </div>
       </div>
